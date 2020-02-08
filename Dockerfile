@@ -1,4 +1,4 @@
-FROM python:3.8
+FROM docker.local/library/python:3.8
 
 ENV PYTHONUNBUFFERED 1
 

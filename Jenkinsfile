@@ -9,7 +9,7 @@ pipeline {
         stage('Test') { 
             steps {
                 echo 'Testing Project...'
-                docker-compose up --build
+                bash -c "docker-compose up --build"
             }
         }
         stage('Deploy') { 

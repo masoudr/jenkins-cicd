@@ -2,10 +2,9 @@ version: '3.7'
 
 services:
     app:
+        image: docker.local/jenkins-test/jenkins-test-deploy
         build:
             context: .
-        
-        image: jenkins-test
         
         ports: 
             - '8000:8000'

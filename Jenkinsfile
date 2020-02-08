@@ -1,23 +1,27 @@
 pipeline {
-    agent any 
+    agent any
     stages {
+        
         stage('Build') { 
             steps {
-                echo 'This is Django project so there is no need to build'
+                echo 'This is a Django project so there is no need to build'
             }
         }
+
         stage('Test') { 
             steps {
                 echo 'Testing Project...'
                 sh 'docker-compose up --build'
             }
         }
+
         stage('Deploy') { 
             steps {
-                // 
-                echo 'Currently there is no deploy method'
+                echo 'Deploying to hub'
+                sh 'docker-compose push'
             }
         }
+
         stage('Clean Up') {
             steps {
                 echo 'Cleaning up project'

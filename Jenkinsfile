@@ -11,7 +11,8 @@ pipeline {
         stage('Test') { 
             steps {
                 echo 'Testing Project...'
-                sh 'docker-compose up --build'
+                sh 'docker-compose build'
+                sh 'docker-compose run app sh -c "python manage.py test"'
             }
         }
 

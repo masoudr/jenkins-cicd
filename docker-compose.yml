@@ -2,6 +2,7 @@ version: '3.7'
 
 services:
     app:
+        image: docker.local/jenkins-test/jenkins-test-deploy
         build:
             context: .
         

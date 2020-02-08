@@ -18,5 +18,11 @@ pipeline {
                 echo 'Currently there is no deploy method'
             }
         }
+        stage('Clean Up') {
+            steps {
+                echo 'Cleaning up project'
+                sh 'docker-compose down -v --rmi all'
+            }
+        }
     }
 }
